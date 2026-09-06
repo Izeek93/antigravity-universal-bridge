@@ -4,6 +4,8 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg?style=flat-square)](LICENSE)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg?style=flat-square)](https://www.python.org/)
 [![GitHub Sponsors](https://img.shields.io/badge/Sponsor-GitHub%20Sponsors-ea4aaa?style=flat-square&logo=githubsponsors)](https://github.com/sponsors/Izeek93)
+[![Boosty](https://img.shields.io/badge/Boosty-Donate-f15f2c.svg?style=flat-square&logo=boosty)](https://boosty.to/izeek)
+[![YooMoney](https://img.shields.io/badge/YooMoney-Donate-8b3ffd.svg?style=flat-square)](https://yoomoney.ru/to/410011192281528)
 
 > **Высоконадежный двусторонний I/O мост-зеркало между Telegram / ВКонтакте и активной сессией Google Antigravity IDE.**
 
@@ -154,11 +156,19 @@ antigravity-universal-bridge/
 
 ## 💖 Спонсорство и поддержка проекта
 
-Если **Antigravity Universal Bridge** помогает вам в работе и разработке, вы можете поддержать проект через [GitHub Sponsors](https://github.com/sponsors/Izeek93):
+Если **Antigravity Universal Bridge** помогает вам в работе и разработке, вы можете поддержать автора и дальнейшее развитие проекта удобным для вас способом:
 
-[![Sponsor](https://img.shields.io/badge/Sponsor-%E2%99%A5%20Izeek93-ea4aaa?style=for-the-badge&logo=githubsponsors)](https://github.com/sponsors/Izeek93)
+* 💖 **[GitHub Sponsors (Международная поддержка)](https://github.com/sponsors/Izeek93)**
+* 🚀 **[Boosty (Эксклюзивные обновления, подписки и донаты)](https://boosty.to/izeek)**
+* 💳 **[ЮMoney (Прямой перевод по СБП и картам)](https://yoomoney.ru/to/410011192281528)**
 
-Ваша поддержка помогает развивать новые адаптеры (Discord, Webhooks), расширять функционал локального AI и поддерживать проект в актуальном состоянии!
+<p align="left">
+  <a href="https://github.com/sponsors/Izeek93"><img src="https://img.shields.io/badge/Sponsor-%E2%99%A5%20Izeek93-ea4aaa?style=for-the-badge&logo=githubsponsors" alt="GitHub Sponsors" /></a>
+  <a href="https://boosty.to/izeek"><img src="https://img.shields.io/badge/Boosty-Поддержать-f15f2c?style=for-the-badge&logo=boosty" alt="Boosty" /></a>
+  <a href="https://yoomoney.ru/to/410011192281528"><img src="https://img.shields.io/badge/ЮMoney-Перевод%20СБП-8b3ffd?style=for-the-badge" alt="YooMoney" /></a>
+</p>
+
+Ваша поддержка помогает создавать новые адаптеры (Discord, Webhooks), развивать локальный AI-стек и поддерживать экосистему в актуальном состоянии!
 
 ---
 
