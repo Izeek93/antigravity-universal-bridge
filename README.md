@@ -1,5 +1,10 @@
 # 🛰 Antigravity Universal Bridge
 
+[![Release](https://img.shields.io/github/v/release/Izeek93/antigravity-universal-bridge?color=blue&style=flat-square)](https://github.com/Izeek93/antigravity-universal-bridge/releases)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg?style=flat-square)](LICENSE)
+[![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg?style=flat-square)](https://www.python.org/)
+[![GitHub Sponsors](https://img.shields.io/badge/Sponsor-GitHub%20Sponsors-ea4aaa?style=flat-square&logo=githubsponsors)](https://github.com/sponsors/Izeek93)
+
 > **Высоконадежный двусторонний I/O мост-зеркало между Telegram / ВКонтакте и активной сессией Google Antigravity IDE.**
 
 Мост превращает мессенджеры в полноценный удаленный терминал для управления кодом, задачами и диалогом с агентом Antigravity прямо с телефона или любого устройства: голос, текст, скриншоты экрана, интерактивные согласования и автономная консолидация памяти.
@@ -144,3 +149,20 @@ antigravity-universal-bridge/
 - Все токены и приватные ключи хранятся строго в `.env` и никогда не попадают в Git.
 - Никакие персональные данные (Chat ID, логи диалогов, скриншоты) не сохраняются в коде.
 - Все системные файлы рантайма изолированы мастер-фильтром `.gitignore`.
+
+---
+
+## 💖 Спонсорство и поддержка проекта
+
+Если **Antigravity Universal Bridge** помогает вам в работе и разработке, вы можете поддержать проект через [GitHub Sponsors](https://github.com/sponsors/Izeek93):
+
+[![Sponsor](https://img.shields.io/badge/Sponsor-%E2%99%A5%20Izeek93-ea4aaa?style=for-the-badge&logo=githubsponsors)](https://github.com/sponsors/Izeek93)
+
+Ваша поддержка помогает развивать новые адаптеры (Discord, Webhooks), расширять функционал локального AI и поддерживать проект в актуальном состоянии!
+
+---
+
+## 📄 Лицензия
+
+Проект распространяется под свободной лицензией [MIT License](LICENSE).
+
