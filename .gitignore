@@ -1,0 +1,106 @@
+# ==============================================================================
+# 🔒 Antigravity Universal Bridge — Master .gitignore
+# ==============================================================================
+
+# 1. Секреты, токены и переменные окружения
+.env
+.env*
+!.env.example
+*.env
+*.secrets
+secrets.json
+*.key
+*.token
+*.pem
+*.cert
+
+# 2. Локальный рантайм, очереди сообщений и файлы блокировок
+adapters/telegram/inbox.json
+adapters/telegram/inbox.lock
+adapters/telegram/active_chat.json
+adapters/telegram/incidents.json
+adapters/telegram/pending_approval.json
+adapters/telegram/voice_settings.json
+
+adapters/vk/inbox.json
+adapters/vk/inbox.lock
+adapters/vk/active_status.json
+adapters/vk/incidents.json
+adapters/vk/pending_approval.json
+adapters/vk/drafts.json
+adapters/vk/revision_state.json
+adapters/vk/voice_settings.json
+
+inbox.json
+inbox.lock
+revision_state.json
+incidents.json
+incidents.json*
+pending_approval.json
+candidates.json
+candidates.lock
+sos.json
+
+# 3. Базы данных, семантическая память и долгосрочные логи снов
+memory/DREAMS.md
+memory/dreams/
+memory/candidates.json
+storage/
+*.db
+*.sqlite
+*.sqlite3
+
+# 4. Логи и отладочные дампы
+*.log
+*.tmp
+tmp/
+downloads/
+errors.log
+tg_bridge.log
+tg_bridge_err.log
+vk_bridge.log
+vk_bridge_err.log
+
+# 5. Тяжелые нейросетевые модели и бинарники (>100 МБ, лимит GitHub)
+omnivoice-gguf/
+omnivoice-win64/
+*.gguf
+*.bin
+*.pt
+*.onnx
+*.pyd
+*.dll
+*.exe
+
+# 6. Медиафайлы, скриншоты экрана, синтезированный голос и тестовые артефакты
+media/
+adapters/telegram/media/
+adapters/vk/media/
+adapters/vk/downloads/
+local-voice-replies/
+voice-refs/
+*.ogg
+*.wav
+*.mp3
+*.png
+*.jpg
+*.jpeg
+*.webp
+*.pdf
+*.xlsx
+
+# 7. Виртуальные окружения Python и кэш
+venv/
+.venv/
+env/
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+
+# 8. Системные файлы ОС и IDE
+.idea/
+.vscode/
+Thumbs.db
+Desktop.ini
+.DS_Store
