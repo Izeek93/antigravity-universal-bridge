@@ -29,15 +29,26 @@ if sys.stderr.encoding != 'utf-8':
     sys.stderr.reconfigure(encoding='utf-8', errors='replace')
 
 ROOT_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-if ROOT_DIR not in sys.path:
-    sys.path.insert(0, ROOT_DIR)
+SCRATCH_DIR = os.path.dirname(ROOT_DIR)
+for p in [ROOT_DIR, SCRATCH_DIR]:
+    if p not in sys.path:
+        sys.path.insert(0, p)
 
 from core.windows_mutex import WindowsNamedMutex
 import portalocker
 
+try:
+    from shared_ai.privacy import mask_id
+except ImportError:
+    def mask_id(val, visible=2):
+        s = str(val).strip() if val is not None else ""
+        return f"{s[:visible]}***{s[-visible:]}" if len(s) > visible * 2 else "***"
+
+
 from config import TG_BOT_TOKEN, set_active_chat, ALLOWED_CHAT_IDS
 from send_tg import send_message, send_chat_action, ActionKeeper, set_bot_commands, tg_api_post
 from queue_manager import push_message
+from model_lifecycle import ensure_watchdog_running
 try:
     from tools.local_stt import transcribe_local_whisper
 except ImportError:
@@ -72,7 +83,7 @@ def _start_auto_ack_watchdog():
                 time.sleep(3)
                 if not os.path.exists(inbox_file):
                     continue
-                with portalocker.Lock(lock_file, timeout=2, fail_when_locked=False):
+                with portalocker.Lock(lock_file, timeout=5, fail_when_locked=False):
                     with open(inbox_file, "r", encoding="utf-8") as f:
                         msgs = json.load(f)
                     if not isinstance(msgs, list) or not msgs:
@@ -90,7 +101,7 @@ def _start_auto_ack_watchdog():
                                         "Ответ поступит сразу по готовности.",
                                         chat_id=c_id
                                     )
-                                    log(f"Auto-Ack sent to chat_id {c_id}")
+                                    log(f"Auto-Ack sent to chat_id {mask_id(c_id)}")
                                 except Exception as err:
                                     log(f"Auto-Ack send error: {err}")
                             m["auto_acked"] = True

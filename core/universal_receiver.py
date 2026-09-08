@@ -27,8 +27,17 @@ if sys.stderr.encoding != 'utf-8':
         pass
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-if BASE_DIR not in sys.path:
-    sys.path.insert(0, BASE_DIR)
+SCRATCH_DIR = os.path.dirname(BASE_DIR)
+for p in [BASE_DIR, SCRATCH_DIR]:
+    if p not in sys.path:
+        sys.path.insert(0, p)
+
+try:
+    from shared_ai.privacy import mask_id
+except ImportError:
+    def mask_id(val: Any, visible: int = 2) -> str:
+        s = str(val).strip() if val is not None else ""
+        return f"{s[:visible]}***{s[-visible:]}" if len(s) > visible * 2 else "***"
 
 from core.queue_protocol import MessageQueue
 
@@ -89,7 +98,7 @@ def print_messages(messages: List[Dict[str, Any]]):
         chat_id = msg.get("chat_id")
         user = msg.get("user", "Unknown")
         text = msg.get("text", "")
-        print(f"[{idx}] [{source}] From: {user} (ID: {chat_id})")
+        print(f"[{idx}] [{source}] From: {user} (ID: {mask_id(chat_id)})")
         print(f"    Message: {text}\n")
     print("="*60 + "\n", flush=True)
 

@@ -4,11 +4,12 @@ adapters/telegram/session_manager.py
 Прокси-модуль обратной совместимости.
 Перенаправляет вызовы в единый tools/session_manager.py.
 """
-import sys
 import os
+import sys
 
-TOOLS_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", "tools"))
-if TOOLS_DIR not in sys.path:
-    sys.path.insert(0, TOOLS_DIR)
+ROOT_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+if ROOT_DIR not in sys.path:
+    sys.path.insert(0, ROOT_DIR)
 
-from session_manager import *
+from tools.session_manager import start_new_ide_session, IDE_CMD_PATH
+
